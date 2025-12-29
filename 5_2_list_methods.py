@@ -108,3 +108,28 @@ def test_get_longest_string():
 def test_get_shortest_string():
     assert get_shortest_string(["a", "abcd", "abc"]) == "a"
     assert get_shortest_string([]) is None
+
+# List Compression  
+def test_list_comprehension_examples():
+    # Transform: double each number
+    numbers = [1, 2, 3, 4]
+    doubled = [n * 2 for n in numbers]
+    assert doubled == [2, 4, 6, 8]
+
+    # Filter: keep only even numbers
+    evens = [n for n in numbers if n % 2 == 0]
+    assert evens == [2, 4]
+
+    # Transform + filter: double only even numbers
+    doubled_evens = [n * 2 for n in numbers if n % 2 == 0]
+    assert doubled_evens == [4, 8]
+
+    # String processing: uppercase non-empty strings
+    words = ["python", "", "test", " "]
+    cleaned = [w.upper() for w in words if w.strip()]
+    assert cleaned == ["PYTHON", "TEST"]
+
+    # Nested list flattening
+    matrix = [[1, 2], [3, 4], [5]]
+    flattened = [item for row in matrix for item in row]
+    assert flattened == [1, 2, 3, 4, 5]
