@@ -64,8 +64,7 @@ def any_value_above_threshold(data, threshold):
     """
     Check if ANY value satisfies the condition.
     """
-    return any(v > threshold for v in data.values())
-
+    return any(v > threshold for k, v in data.items())
 
 def all_values_positive(data):
     """
